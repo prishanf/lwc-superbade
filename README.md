@@ -14,7 +14,7 @@ Troubleshoot your JavaScript code.
 Describe how to test Lightning Web Components.
 Import, export, and extend modules.
 
-ß### Bonuse learnings 
+### Bonuse learnings 
 Development with Scratch orgs.
 Seperation of Concern (SOC) Design Patterns
 Unlock Packages
@@ -78,3 +78,19 @@ Instead of investing in boats of its own, HowWeRoll plans to start a boat-sharin
 Github Repository : https://github.com/prishanf/lwc-superbadge
 Github Project : https://github.com/prishanf/lwc-superbadge/projects/1
 Salesforce DevOrg : https://cunning-shark-a6jnia-dev-ed--th-con-app.visualforce.com/ (My Community Playground)
+
+### Q&A
+How to load data after the scratch org is created?
+Run GenerateData.init(); as anaynaous apex. 
+
+### SFDX Commands
+
+#### Cretae a scratch org
+sfdx force:org:create -f config/project-scratch-def.json --setalias <name of the scratch org> --durationdays 30 --setdefaultusername --json --loglevel fatal
+
+#### Cretae a scratch org
+sfdx force:org:create -f config/project-scratch-def.json --setalias lwcsuperbadge_scratchorg --durationdays 30 --setdefaultusername --json --loglevel fatal
+
+#### Install manage/unlock package on Scratch Org/HubOrg
+
+sfdx force:package:install --package 04t6g000008ateoAAA --noprompt --targetusername lwcsuperbadge_scratchorg --wait 15 --publishwait 10 --json
